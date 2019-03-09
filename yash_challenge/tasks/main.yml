@@ -1,0 +1,2 @@
+- include: pack_install.yml
+- include: deploy_app.yml

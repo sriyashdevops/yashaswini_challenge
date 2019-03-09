@@ -1,0 +1,4 @@
+- name: install {{webser}}
+  apt: name={{webser}} state=latest
+  notify:
+   - start {{webser}}
