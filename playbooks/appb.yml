@@ -1,5 +1,11 @@
 ---
+- hosts: localhost
+  tasks:  
+  - name: for git pull
+    git:
+      repo: https://github.com/sriyashdevops/yashaswini_challenge.git
+      dest: /yashaswini_challenge/
+
 - hosts: webserver
   roles:
    - appdeploy
-

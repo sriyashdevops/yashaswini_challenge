@@ -1,9 +1,8 @@
-
- name: Pull file from source
+- name: Pull file from source
   git:
    repo: https://github.com/sriyashdevops/yashaswini_challenge.git
    dest: /yashaswini_challenge/
- name: to deploy application
-  copy:
-   src: index.html
-   dest: /var/www/html/index.html
+#- name: to deploy application
+ # copy:
+  # src: index.html
+   #dest: /var/www/html/index.html
