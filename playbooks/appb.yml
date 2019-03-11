@@ -1,10 +1,14 @@
 ---
 - hosts: localhost
-  tasks:  
+  tasks:
+  - name: to delete git deirectory
+    file:
+     state: absent
+     path: /root/yashaswini_challenge1/  
   - name: for git pull
     git:
       repo: ssh://git@github.com/sriyashdevops/yashaswini_challenge.git
-      dest: /yashaswini_challenge/
+      dest: /root/yashaswini_challenge1/
 
 - hosts: webserver
   roles:
