@@ -1,0 +1,15 @@
+---
+- hosts: webserver
+  tasks:
+  - name: Apache | Enable the new site
+    command: a2ensite 000-default.conf  creates=/etc/apache2/sites-enabled/000-default.conf
+  - name: Check the apache configuration
+    command: apache2ctl configtest
+    register: apache_result
+    ignore_errors: yes
+  - name: Apache | Reverting - Disable new site
+    action: command a2dissite 000-default.conf
+ # - name: Apache | Reverting changes - Ending playbook
+  #  action: fail msg="Apache configuration is invalid. Please check before re-running the playbook."
+  - name: Reload Apache
+    service: name=apache2 state=reloaded
