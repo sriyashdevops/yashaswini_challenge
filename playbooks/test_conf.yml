@@ -11,5 +11,5 @@
     action: command a2dissite 000-default.conf
  # - name: Apache | Reverting changes - Ending playbook
   #  action: fail msg="Apache configuration is invalid. Please check before re-running the playbook."
-  - name: Reload Apache
+  - name: Reload Apache2
     service: name=apache2 state=reloaded
